@@ -23,17 +23,17 @@
         <div class="row-control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <%= f.label :password %>
-            <%= f.text_field :password, class: "form-control", placeholder: "Password" %>
+            <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
           </div>
         </div>
         <div class="row-control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <%= f.label :password_confirmation %>
-            <%= f.text_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
           </div>
         </div>
         <div class="form-group">
-          <%= f.submit "Sign Up", class: "form-control btn btn-success" %>
+          <%= f.submit "Sign Up", class: "btn btn-default" %>
         </div>
       <% end %>
     </div>
