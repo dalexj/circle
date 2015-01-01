@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  before_action :current_user, only: [:show, :update, :edit]
+  before_action :required_admin, except: [:new, :create, :edit, :show, :update]
+  before_action :correct_user, except: [:index, :destroy, :new, :create]
+
   def index
     @users = User.all
   end
@@ -11,14 +15,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to :back
+      redirect_to bench_path
     else
-      render :new
+      flash[:error] = "Invalid sign-up. Try again."
+      render :back
     end
   end
 
   def edit
-    raise "TODO"
   end
 
   def update
@@ -32,20 +36,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    unless current_user && current_user?(@user)
-      unauthorized
-    end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :name, :password, :password_confirmation)
+    params.require(:user).permit(:email_address, :name, :password, :password_confirmation)
   end
 
-  def unauthorized
-    flash[:errors] = "You can only view your own profile"
-    redirect_to root_path
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to root_url unless current_user == @user
   end
-
 end

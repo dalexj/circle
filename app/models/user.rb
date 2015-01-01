@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
-  before_save {|user| user.email = email.downcase }
+  before_save {|user| user.email_address = email_address.downcase }
 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email_address, presence: true, uniqueness: true, format: { with: VALID_EMAIL }
