@@ -1,19 +1,24 @@
+.alert {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .navbar-default {
-  color: #211F20;
+  color: #211f20;
   background-color: transparent;
   border-color: #fff;
 }
 
 .navbar-fixed-top, .navbar-fixed-bottom{
-  position: absolute;
+  position: static;
 }
 
 .navbar-default .navbar-nav>li>a{
-  color: #211F20;
+  color: #211f20;
 }
 
 .navbar-default .navbar-brand {
-  color: #211F20;
+  color: #211f20;
 }
 
 body {
@@ -44,7 +49,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: montserrat,"helvetica neue",helvetica,arial,sans-serif;
     font-weight: 700;
 }
 
@@ -65,7 +70,7 @@ hr.star-primary:after {
     position: relative;
     top: -.8em;
     padding: 0 .25em;
-    font-family: FontAwesome;
+    font-family: fontawesome;
     font-size: 2em;
 }
 
@@ -120,7 +125,7 @@ header .intro-text .skills {
 
 @media(min-width:768px) {
     header .container {
-        padding-top: 200px;
+        padding-top: 100px;
         padding-bottom: 100px;
     }
 
