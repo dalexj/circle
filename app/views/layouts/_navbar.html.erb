@@ -7,20 +7,21 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#page-top">Luke's Circle</a>
+    <a class="navbar-brand" href="<%= root_path %>">Luke's Circle</a>
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
-      <li class="hidden">
-      <a href="#page-top"></a>
-      </li>
-      <li class="page-scroll">
-      <a href="#about">About</a>
-      </li>
-      <li class="page-scroll">
-      <a href="#sign">Sign Up</a>
-      </li>
-      <li><%= render partial: 'partials/log_in' %></li>
+      <li class="hidden"><a href="#page-top"></a></li>
+      <% if current_page? root_url %>
+        <li class="page-scroll"><a href="#about">About</a></li>
+      <% end %>
+      <% if !current_user %>
+        <li class="page-scroll"><a href="#sign">Sign Up</a></li>
+        <li><%= render partial: 'partials/log_in' %></li>
+      <% else %>
+        <li><%= link_to "Profile", user_path(current_user) %></li>
+        <li><%= link_to "The Circle", bench_path %>
+      <% end %>
     </ul>
   </div>
 </div>
