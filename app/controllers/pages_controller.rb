@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :require_admin, only: [:bench]
+  before_action :require_user, only: [:bench]
 
   def home
     @user = User.new
