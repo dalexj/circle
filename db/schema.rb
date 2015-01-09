@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103043544) do
+ActiveRecord::Schema.define(version: 20150109162509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "inner_circles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email_address"
@@ -33,6 +39,8 @@ ActiveRecord::Schema.define(version: 20150103043544) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "img_url"
+    t.integer  "strength"
+    t.integer  "relationship"
   end
 
 end
