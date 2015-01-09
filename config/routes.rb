@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :users
+  resources :inner_circles
 
   get    '/bench',  to: "pages#bench"
   get    '/login',  to: "sessions#new"

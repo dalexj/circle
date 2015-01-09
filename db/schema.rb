@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109164831) do
+ActiveRecord::Schema.define(version: 20150109171315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,9 @@ ActiveRecord::Schema.define(version: 20150109164831) do
     t.string   "img_url"
     t.integer  "strength"
     t.integer  "relationship"
+    t.integer  "inner_circle_id"
   end
+
+  add_index "warmers", ["inner_circle_id"], name: "index_warmers_on_inner_circle_id", using: :btree
 
 end

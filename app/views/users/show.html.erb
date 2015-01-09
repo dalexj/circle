@@ -9,3 +9,9 @@
   </div>
 </div>
 
+<%= link_to "New Circle", new_inner_circle_path %>
+
+<% @user.inner_circles.each do |circle| %>
+  <%= link_to "#{circle.name}", inner_circle_path(circle) %>
+<% end %>
+
