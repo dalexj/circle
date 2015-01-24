@@ -6,7 +6,6 @@ class PagesController < ApplicationController
   end
 
   def bench
-    @warmers = Warmer.all
   end
 
   private

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109171315) do
+ActiveRecord::Schema.define(version: 20150124204446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20150109171315) do
 
   add_index "inner_circles", ["user_id"], name: "index_inner_circles_on_user_id", using: :btree
 
+  create_table "user_follow_connections", force: true do |t|
+    t.integer  "owner_id"
+    t.integer  "follower_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email_address"
     t.string   "name"
@@ -32,21 +39,9 @@ ActiveRecord::Schema.define(version: 20150109171315) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.boolean  "admin"
-  end
-
-  create_table "warmers", force: true do |t|
-    t.string   "name"
+    t.boolean  "owner"
     t.string   "linkedin_url"
-    t.text     "description"
-    t.string   "resume_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "img_url"
-    t.integer  "strength"
-    t.integer  "relationship"
-    t.integer  "inner_circle_id"
+    t.string   "slug"
   end
-
-  add_index "warmers", ["inner_circle_id"], name: "index_warmers_on_inner_circle_id", using: :btree
 
 end

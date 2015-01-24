@@ -7,15 +7,9 @@
     </div>
   </div>
   <div class="row">
-    <% @warmers.each.with_index do |warmer, index| %>
-      <%= render partial: 'partials/warmer_cover', locals: {warmer:warmer, index:index} %>
-    <% end %>
+    
   </div>
 </div>
 </section>
 
 <!-- Details for Modals -->
-<% @warmers.each.with_index do |warmer, index| %>
-  <%= render partial: 'partials/warmer_detail', locals: {warmer:warmer, index:index} %>
-<% end %>
-

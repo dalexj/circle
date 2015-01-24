@@ -16,7 +16,6 @@ class InnerCirclesController < ApplicationController
 
   def show
     @inner_circle = InnerCircle.find(params[:id])
-    @warmers = @inner_circle.warmers
   end
 
   private
