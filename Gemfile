@@ -10,16 +10,24 @@ gem 'font-awesome-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem 'unicorn'
 gem 'rails_12factor', group: :production
 gem 'heroku-deflater', group: :production
+gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :development, :test do
-gem 'better_errors'
-gem 'binding_of_caller'
-gem 'pry-rails'
-gem 'pry-byebug'
+  gem 'spring'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
+
