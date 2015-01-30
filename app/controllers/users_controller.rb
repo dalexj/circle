@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       redirect_to bench_path
     else
       flash[:error] = "Invalid sign-up. Try again."
-      render :back
+      redirect_to :back
     end
   end
 
