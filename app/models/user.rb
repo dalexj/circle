@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
   validates :email_address, presence: true, uniqueness: true, format: { with: VALID_EMAIL }
   validates :name, presence: true
   validates :password, length: { minimum: 6 }
+
+  def candidates
+    followers.where(candidate: true)
+  end
 end

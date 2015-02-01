@@ -22,5 +22,14 @@ FactoryGirl.define do
     password "password"
     email_address "owneoyster@gmail.com"
   end
+
+  factory :candidate, class: User do
+    name "Charles"
+    admin false
+    owner false
+    candidate true
+    password "password"
+    email_address "charles@gmail.com"
+  end
 end
     

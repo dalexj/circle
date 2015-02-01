@@ -19,3 +19,24 @@ describe User do
   end
 end
 
+describe User, '#candidates' do
+  it 'should be able to have followers that are also candidates' do
+    owner = create :owner
+    candidate = create :candidate
+
+    owner.followers << candidate
+
+    expect(owner.candidates).to eq [candidate]
+  end
+
+  it 'should be able to have followers that are not candidates' do
+    owner = create :owner
+    user = create :user
+
+    owner.followers << user
+
+    expect(owner.candidates).to be_empty
+    expect(owner.followers).to eq [user]
+  end
+end
+
