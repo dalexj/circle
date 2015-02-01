@@ -17,6 +17,8 @@ gem 'rails_12factor', group: :production
 gem 'heroku-deflater', group: :production
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'paperclip', '~> 4.2'
+gem 'aws-sdk'
+gem 'figaro'
 
 group :development, :test do
   gem 'spring'
