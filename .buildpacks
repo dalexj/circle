@@ -1,0 +1,4 @@
+https://github.com/mcollina/heroku-buildpack-graphicsmagick.git
+https://github.com/BauCloud/heroku-buildpack-poppler.git
+https://github.com/elbongurk/heroku-buildpack-ghostscript.git
+https://github.com/heroku/heroku-buildpack-ruby.git
