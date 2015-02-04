@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      redirect_to bench_path, notice: "Welcome to the inner circle"
+      redirect_to bench_path, notice: 'Welcome to the inner circle'
     else
-      redirect_to root_path, notice: "We could not log you in. Please try again."
+      redirect_to root_path, notice: 'We could not log you in. Please try again.'
     end
   end
 

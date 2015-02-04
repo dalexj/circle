@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to bench_path
     else
-      flash[:error] = "Invalid sign-up. Try again."
+      flash[:error] = 'Invalid sign-up. Try again.'
       redirect_to :back
     end
   end

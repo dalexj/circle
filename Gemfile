@@ -34,5 +34,5 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'rubocop', require: false
 end
-

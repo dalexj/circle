@@ -1,6 +1,6 @@
 class InnerCirclesController < ApplicationController
   def new
-     @inner_circle = InnerCircle.new
+    @inner_circle = InnerCircle.new
   end
 
   def create
@@ -9,7 +9,7 @@ class InnerCirclesController < ApplicationController
     if @inner_circle.save
       redirect_to inner_circle_path(@inner_circle)
     else
-      flash[:error] = "Could not create Inner Circle. Try again."
+      flash[:error] = 'Could not create Inner Circle. Try again.'
       render :back
     end
   end
