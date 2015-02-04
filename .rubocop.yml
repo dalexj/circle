@@ -1,6 +1,12 @@
-inherit_from: .rubocop_todo.yml
+Style/Documentation:
+  Enabled: false
+
 HasAndBelongsToMany:
   Enabled: false
+
+Metrics/LineLength:
+  Max: 200
+
 AllCops:
   RunRailsCops: true
   Include:
@@ -10,3 +16,4 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
+    - 'bin/**/*'

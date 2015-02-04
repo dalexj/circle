@@ -2,9 +2,17 @@ class User < ActiveRecord::Base
   has_secure_password
   has_attached_file :resume
 
-  has_and_belongs_to_many(:followers, join_table: :user_follow_connections, class_name: 'User', foreign_key: :owner_id, association_foreign_key: :follower_id)
-  has_and_belongs_to_many(:owners, join_table: :user_follow_connections, class_name: 'User', foreign_key: :follower_id, association_foreign_key: :owner_id)
   has_many :inner_circles
+  has_and_belongs_to_many(:followers,
+                          join_table: :user_follow_connections,
+                          class_name: 'User',
+                          foreign_key: :owner_id,
+                          association_foreign_key: :follower_id)
+  has_and_belongs_to_many(:owners,
+                          join_table: :user_follow_connections,
+                          class_name: 'User',
+                          foreign_key: :follower_id,
+                          association_foreign_key: :owner_id)
 
   before_save { |user| user.email_address = email_address.downcase }
 
