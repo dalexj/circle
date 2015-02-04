@@ -11,42 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150201202447) do
-
+ActiveRecord::Schema.define(version: 20_150_201_202_447) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "inner_circles", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
+  create_table 'inner_circles', force: true do |t|
+    t.string 'name'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.integer 'user_id'
   end
 
-  add_index "inner_circles", ["user_id"], name: "index_inner_circles_on_user_id", using: :btree
+  add_index 'inner_circles', ['user_id'], name: 'index_inner_circles_on_user_id', using: :btree
 
-  create_table "user_follow_connections", force: true do |t|
-    t.integer  "owner_id"
-    t.integer  "follower_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'user_follow_connections', force: true do |t|
+    t.integer 'owner_id'
+    t.integer 'follower_id'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email_address"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "password_digest"
-    t.boolean  "admin"
-    t.boolean  "owner"
-    t.string   "linkedin_url"
-    t.string   "slug"
-    t.boolean  "candidate"
-    t.string   "resume_file_name"
-    t.string   "resume_content_type"
-    t.integer  "resume_file_size"
-    t.datetime "resume_updated_at"
+  create_table 'users', force: true do |t|
+    t.string 'email_address'
+    t.string 'name'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.string 'password_digest'
+    t.boolean 'admin'
+    t.boolean 'owner'
+    t.string 'linkedin_url'
+    t.string 'slug'
+    t.boolean 'candidate'
+    t.string 'resume_file_name'
+    t.string 'resume_content_type'
+    t.integer 'resume_file_size'
+    t.datetime 'resume_updated_at'
   end
-
 end

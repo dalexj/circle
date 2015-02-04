@@ -11,11 +11,11 @@ describe User do
   it { should have_and_belong_to_many(:owners) }
 
   it 'should downcase the user email before saving' do
-    user = build :user, email_address: "UNCLeUnI@gmail.com"
+    user = build :user, email_address: 'UNCLeUnI@gmail.com'
 
     user.save
 
-    expect(user.email_address).to eq "uncleuni@gmail.com"
+    expect(user.email_address).to eq 'uncleuni@gmail.com'
   end
 end
 
@@ -39,4 +39,3 @@ describe User, '#candidates' do
     expect(owner.followers).to eq [user]
   end
 end
-
