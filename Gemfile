@@ -20,6 +20,7 @@ gem 'paperclip', '~> 4.2'
 gem 'aws-sdk'
 gem 'figaro'
 gem 'docsplit'
+gem 'rubocop', require: false
 
 group :development, :test do
   gem 'spring'
@@ -34,5 +35,4 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
-  gem 'rubocop', require: false
 end
