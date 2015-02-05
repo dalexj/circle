@@ -5,6 +5,14 @@ class ResumeParser
     @resume = pdf_to_string(resume_path)
   end
 
+  def extract_email
+    email_regex.match(resume)[0]
+  end
+
+  def extract_linkedin
+    linkedin_regex.match(resume)[0]
+  end
+
   private
 
   def pdf_to_string(resume_path)
@@ -14,5 +22,13 @@ class ResumeParser
     extracted = File.read(txt_path)
     File.delete(txt_path)
     extracted
+  end
+
+  def email_regex
+    /[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+/i
+  end
+
+  def linkedin_regex
+    /linkedin.com\S*/
   end
 end
