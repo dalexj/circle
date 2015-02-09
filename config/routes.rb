@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
+  mount_griddler
+
   resources :users, param: :slug do
     resources :inner_circles, param: :name
   end

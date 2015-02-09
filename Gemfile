@@ -21,6 +21,8 @@ gem 'aws-sdk'
 gem 'figaro'
 gem 'docsplit'
 gem 'rubocop', require: false
+gem 'griddler'
+gem 'griddler-sendgrid'
 
 group :development, :test do
   gem 'spring'
