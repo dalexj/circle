@@ -13,7 +13,7 @@ FactoryGirl.define do
           ActionDispatch::Http::UploadedFile.new(
             filename: 'aa-test.pdf',
             type: 'image/pdf',
-            tempfile: File.new("#{File.expand_path(File.dirname(__FILE__))}/resumes/aa-test.pdf")
+            tempfile: File.new("#{File.expand_path(File.dirname(__FILE__))}/../resumes/aa-test.pdf")
         )
         ]
       end
