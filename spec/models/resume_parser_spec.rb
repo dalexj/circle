@@ -49,6 +49,13 @@ describe ResumeParser, '#extract_email' do
   end
 
   it 'can get an email from linkedin if not included in pdf' do
+    skip
+    docx = test_resumes('rs-test.docx')
+    parser = ResumeParser.new(docx)
+
+    email = parser.extract_email
+
+    expect(email).to eq 'robertoseira@gmail.com'
   end
 
   it 'throws an error if neither linkedin or email are found' do
@@ -57,11 +64,18 @@ end
 
 describe ResumeParser, '#extract_linkedin' do
   it 'can find a linkedin url if one exists' do
-    pdf = test_resumes('ab-test.pdf')
-    parser = ResumeParser.new(pdf)
+    pdfs   = ['ab-test.pdf', 'ah-test.pdf']
+    linkedins = ['linkedin.com/in/abenjamin', 'linkedin.com/pub/allan-al-hartung/6/73/638/']
+    pdfs.each_with_index do |pdf, i|
+      pdf_path = test_resumes(pdf)
+      parser = ResumeParser.new(pdf_path)
 
-    linkedin = parser.extract_linkedin
+      linkedin = parser.extract_linkedin
 
-    expect(linkedin).to eq 'linkedin.com/in/abenjamin'
+      expect(linkedin).to eq linkedins[i]
+    end
+  end
+
+  it 'can find a linkedin url based on a provided email' do
   end
 end

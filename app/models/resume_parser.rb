@@ -6,14 +6,30 @@ class ResumeParser
   end
 
   def extract_email
-    email_regex.match(resume)[0]
+    email_from_resume || email_from_linkedin
   end
 
   def extract_linkedin
-    linkedin_regex.match(resume)[0]
+    linkedin_from_resume || linkedin_from_email
   end
 
   private
+
+  def linkedin_from_resume
+    match = linkedin_regex.match(resume)
+    match[0] if match
+  end
+
+  def linkedin_from_email
+  end
+
+  def email_from_resume
+    match = email_regex.match(resume)
+    match[0] if match
+  end
+
+  def email_from_linkedin
+  end
 
   def pdf_to_string(resume_path)
     Docsplit.extract_text([resume_path], ocr: false, output: Dir.tmpdir)
